@@ -1,0 +1,44 @@
+{
+  "name": "codesense",
+  "version": "1.0.0",
+  "description": "## Scaffold",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest run",
+    "mobile": "npm --prefix apps/mobile run start -- --dev-client",
+    "ios": "cd apps/mobile && npx expo run:ios",
+    "android": "cd apps/mobile && npx expo run:android",
+    "lint:mobile": "npm --prefix apps/mobile run lint",
+    "lint:functions": "npm --prefix functions run lint",
+    "lint": "npm run lint:mobile && npm run lint:functions",
+    "typecheck": "npm --prefix apps/mobile run typecheck",
+    "build:functions": "npm --prefix functions run build",
+    "emulators": "npm run build:functions && firebase emulators:start --only auth,firestore,functions --project demo-codesense",
+    "test:watch": "vitest",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajramosj/senticode.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajramosj/senticode/issues"
+  },
+  "homepage": "https://github.com/ajramosj/senticode#readme",
+  "private": true,
+  "engines": {
+    "node": "22.x"
+  },
+  "devDependencies": {
+    "@firebase/rules-unit-testing": "5.0.2",
+    "firebase": "12.19.0",
+    "firebase-tools": "15.36.0",
+    "prettier": "3.10.1",
+    "typescript": "7.0.2",
+    "vitest": "5.1.0"
+  }
+}
